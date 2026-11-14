@@ -22,6 +22,19 @@ python Project_Code_ML678.py "default of credit card clients.xls" 2
 - RF and XGBoost: 100 trees; XGBoost run with `device="cuda"` (T4 GPU in Colab)
 - Sensitivity, subgroup and cost analyses: seed 0 only; training fractions 25% and 100%
 
+## AI-use disclosure
+I used Claude (Anthropic) to help draft the experiment code and the paper text.
+I ran all experiments myself and checked the reported numbers against the output files.
+
+## Citations
+- Data: UCI Machine Learning Repository, "Default of Credit Card Clients" (ID 350).
+  I-C. Yeh and C-H. Lien, Expert Systems with Applications 36(2):2473-2480, 2009.
+- Libraries: scikit-learn (Pedregosa et al., JMLR 2011), XGBoost (Chen and Guestrin, KDD 2016),
+  pandas, NumPy, matplotlib.
+- Methods: Platt scaling (Platt, 1999); isotonic regression calibration
+  (Niculescu-Mizil and Caruana, ICML 2005); ECE (Guo et al., ICML 2017).
+- No external code was copied; the pipeline was written for this project with AI assistance.
+
 ## Notes
 - Calibrators are fit on the validation set; the test set is not used for tuning or calibration.
 - GPU and CPU XGBoost runs can differ in the last decimals.
